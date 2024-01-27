@@ -9,5 +9,8 @@
 }
 
 .gradient {
-  background: linear-gradient(#0a001b, #ffffff00);
+  background: linear-gradient(#0a001bf1, #0a001bb7),
+    url("./assets/main.bg.webp");
+  background-size: cover;
+  background-position: center;
 }

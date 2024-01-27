@@ -1,8 +1,20 @@
-# React + Vite
+# ✨ Cinema - React App ✨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## ✨ Description ✨
 
-Currently, two official plugins are available:
+Cinema app uses API to fetch movie data and display to the website.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Technology used 👨‍💻
+
+- ✅ React JS version 18
+- ✅ Tailwind CSS
+
+---
+
+### Deployment 🪐🌌🌍
+
+- Netlify - will be updated.
+
+---
+
+Designed and coded by [Ali Sajad Ahmadi](https://linkedin.com/in/alisajad001)

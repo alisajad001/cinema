@@ -1,11 +1,5 @@
-import Search from "./components/Search";
-
-function App() {
-  return (
-    <div>
-      <Search />
-    </div>
-  );
-}
+const App = () => {
+  return <div>Hello World</div>;
+};
 
 export default App;

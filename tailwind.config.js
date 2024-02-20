@@ -14,6 +14,10 @@ export default {
       padding: {
         section: '1em',
       },
+
+      backgroundImage: {
+        hero: "linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)) , url('./assets/main.bg.webp')",
+      },
     },
   },
   plugins: [],

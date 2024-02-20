@@ -10,6 +10,10 @@ export default {
         dark: '#141319',
         lightDark: '#2C2A39',
       },
+
+      padding: {
+        section: '1em',
+      },
     },
   },
   plugins: [],

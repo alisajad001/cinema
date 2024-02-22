@@ -1,5 +1,6 @@
-const TrendingMovie = ({ title, poster_path, rating }) => {
+const TrendingMovie = ({ title, poster_path, vote_average }) => {
   const imageUrl = `https://image.tmdb.org/t/p/original/${poster_path}`;
+  const imdbRating = vote_average.toFixed(1);
   return (
     <div className="w-full mb-2 border border-slate-900 rounded-lg p-2 cursor-pointer">
       <img
@@ -14,7 +15,7 @@ const TrendingMovie = ({ title, poster_path, rating }) => {
           <span className="bg-yellow-400 text-dark px-[2px] rounded-sm font-bold">
             IMDB
           </span>{' '}
-          {rating}
+          {imdbRating}
         </span>
       </h3>
     </div>

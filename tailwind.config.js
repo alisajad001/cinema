@@ -16,7 +16,7 @@ export default {
       },
 
       backgroundImage: {
-        hero: "linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)) , url('./assets/main.bg.webp')",
+        hero: "linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 20, 1)) , url('./assets/main.bg.webp')",
       },
     },
   },

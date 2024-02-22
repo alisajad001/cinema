@@ -8,12 +8,12 @@ const TrendingMovies = () => {
   const { data, loading, error } = useFetch(apiURL);
 
   return (
-    <section className="pt-5">
-      <h2 className="text-xl sm:text-3xl text-white text-center font-bold">
+    <section className="pt-2">
+      <h2 className="text-xl text-white font-semibold">
         Trending <span className="text-primary">Movies</span>
       </h2>
 
-      <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 justify-items-center">
+      <div className="flex gap-4 overflow-x-scroll py-5">
         {loading && <p>Loading...</p>}
 
         {error && <p>Error: {error.message}</p>}

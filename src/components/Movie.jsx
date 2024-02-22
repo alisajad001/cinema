@@ -15,14 +15,13 @@ const Movie = ({ title, poster_path, vote_average, release_date }) => {
       <h3 className="text-sm font-semibold mt-2 text-white">
         {movieTitle}...
         <div className="flex justify-between mt-1">
+          <span className="font-semibold text-[10px]">{movieReleaseDate}</span>
           <span className="block text-yellow-400 text-[10px]">
             <span className="bg-yellow-400 text-dark px-[2px] rounded-sm font-bold">
               IMDB
             </span>{' '}
             {movieRating}
           </span>
-
-          <span className="font-semibold text-[10px]">{movieReleaseDate}</span>
         </div>
       </h3>
     </div>

@@ -9,7 +9,7 @@ const Movie = ({ title, poster_path, vote_average, release_date }) => {
       <img
         src={movieImage}
         alt="Movie Image"
-        className="rounded-lg hover:saturate-150 transition object-cover w-full"
+        className="rounded-lg hover:saturate-150 hover:-translate-y-2 transition object-cover w-full"
       />
 
       <h3 className="text-sm font-semibold mt-2 text-white">

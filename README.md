@@ -2,7 +2,14 @@
 
 ## ✨ Description ✨
 
-Cinema app uses API to fetch movie data and display to the website.
+Cinema app utilizes an API to fetch movie data and offers several features for an enhanced movie experience.
+
+### Features 🎬
+
+- **Trending Movies:** Discover the latest trending movies.
+- **Movie Details:** Get in-depth information about each movie.
+- **Movie Actors:** Explore details about the actors in your favorite movies.
+- **Add to favorite:** Add your favorite movie to the favorites.
 
 ### Technology used 👨‍💻
 
@@ -13,7 +20,7 @@ Cinema app uses API to fetch movie data and display to the website.
 
 ### Deployment 🪐🌌🌍
 
-- Netlify - will be updated.
+- Netlify - (Will be updated soon)
 
 ---
 

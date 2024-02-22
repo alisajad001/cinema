@@ -1,13 +1,13 @@
 const Movie = ({ title, poster_path, vote_average, release_date }) => {
-  const imageUrl = `https://image.tmdb.org/t/p/w500/${poster_path}`;
-  const imdbRating = vote_average.toFixed(1);
-  const releaseDate = release_date.slice(0, 4);
+  const movieImage = `https://image.tmdb.org/t/p/w500/${poster_path}`;
+  const movieRating = vote_average.toFixed(1);
+  const movieReleaseDate = release_date.slice(0, 4);
   const movieTitle = title.substring(0, 18);
 
   return (
     <div className="w-40 rounded-lg cursor-pointer transition flex-shrink-0">
       <img
-        src={imageUrl}
+        src={movieImage}
         alt="Movie Image"
         className="rounded-lg hover:saturate-150 transition object-cover w-full"
       />
@@ -19,10 +19,10 @@ const Movie = ({ title, poster_path, vote_average, release_date }) => {
             <span className="bg-yellow-400 text-dark px-[2px] rounded-sm font-bold">
               IMDB
             </span>{' '}
-            {imdbRating}
+            {movieRating}
           </span>
 
-          <span className="font-semibold text-[10px]">{releaseDate}</span>
+          <span className="font-semibold text-[10px]">{movieReleaseDate}</span>
         </div>
       </h3>
     </div>

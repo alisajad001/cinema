@@ -5,7 +5,7 @@ const Movie = ({ title, poster_path, vote_average, release_date }) => {
   const movieTitle = title.substring(0, 18);
 
   return (
-    <div className="w-40 rounded-lg cursor-pointer transition flex-shrink-0">
+    <div className="w-32 sm:w-44 rounded-lg cursor-pointer transition flex-shrink-0">
       <img
         src={movieImage}
         alt="Movie Image"

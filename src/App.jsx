@@ -3,8 +3,15 @@ import Navbar from './components/Navbar';
 import Footer from './sections/Footer';
 import Home from './sections/Home';
 import MoviesList from './components/MoviesList';
+import useFetch from './components/hooks/useFetch';
+import { useState } from 'react';
 
 const App = () => {
+  const [query, setQuery] = useState('');
+  const apiURL = `search/movie?query=${query}&`;
+
+  const { data, loading, error } = useFetch(apiURL);
+
   return (
     <>
       <Navbar />
@@ -12,9 +19,18 @@ const App = () => {
         <Route
           path="/"
           element={
-            <Home>
-              <MoviesList apiEndpoint="trending/movie/week" title="Trending" />
-              <MoviesList apiEndpoint="movie/popular" title="Popular" />
+            <Home query={query} setQuery={setQuery}>
+              {query.length > 0 ? (
+                <MoviesList apiEndpoint={apiURL} title="Search result" />
+              ) : (
+                <>
+                  <MoviesList
+                    apiEndpoint="trending/movie/week?"
+                    title="Trending"
+                  />
+                  <MoviesList apiEndpoint="movie/popular?" title="Popular" />
+                </>
+              )}
             </Home>
           }
         />

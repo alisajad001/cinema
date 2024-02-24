@@ -7,7 +7,7 @@ const Movie = ({ title, poster_path, vote_average, release_date }) => {
   return (
     <div className="w-32 sm:w-44 rounded-lg cursor-pointer transition flex-shrink-0">
       <img
-        src={movieImage}
+        src={poster_path ? movieImage : 'https://via.placeholder.com/300x450'}
         alt={title}
         title={title}
         className="rounded-lg hover:saturate-150 hover:-translate-y-2 transition object-cover w-full"

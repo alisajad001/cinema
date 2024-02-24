@@ -12,3 +12,7 @@
 ::-webkit-scrollbar {
   display: none;
 }
+
+body {
+  @apply bg-hero;
+}

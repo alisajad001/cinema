@@ -5,12 +5,11 @@ import Home from './sections/Home';
 import MoviesList from './components/MoviesList';
 import useFetch from './components/hooks/useFetch';
 import { useState } from 'react';
+import MovieDetails from './components/MovieDetails';
 
 const App = () => {
   const [query, setQuery] = useState('');
   const apiURL = `search/movie?query=${query}&`;
-
-  const { data, loading, error } = useFetch(apiURL);
 
   return (
     <>
@@ -34,6 +33,8 @@ const App = () => {
             </Home>
           }
         />
+
+        <Route path="movie/:id" element={<MovieDetails />} />
       </Routes>
       <Footer />
     </>

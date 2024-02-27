@@ -16,3 +16,7 @@
 body {
   @apply bg-hero;
 }
+
+.gradient-overlay {
+  @apply absolute top-0 left-0 w-full bg-no-repeat h-full bg-gradient-to-r from-black via-black/70 to-transparent;
+}

@@ -1,11 +1,22 @@
-const Movie = ({ title, poster_path, vote_average, release_date }) => {
+import { useNavigate } from 'react-router-dom';
+
+const Movie = ({ title, poster_path, vote_average, release_date, id }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/movie/${id}`);
+  };
+
   const movieImage = `https://image.tmdb.org/t/p/w500/${poster_path}`;
   const movieRating = vote_average.toFixed(1);
   const movieReleaseDate = release_date.slice(0, 4);
   const movieTitle = title.substring(0, 18);
 
   return (
-    <div className="w-32 sm:w-44 rounded-lg cursor-pointer transition flex-shrink-0">
+    <div
+      className="w-32 sm:w-44 rounded-lg cursor-pointer transition flex-shrink-0"
+      onClick={handleClick}
+    >
       <img
         src={poster_path ? movieImage : 'https://via.placeholder.com/300x450'}
         alt={title}

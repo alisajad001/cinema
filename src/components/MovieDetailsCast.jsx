@@ -1,4 +1,3 @@
-import React from 'react';
 import MovieDetails from './MovieDetails';
 
 const MovieDetailsCast = ({ casts, castLoading, castError, data }) => {

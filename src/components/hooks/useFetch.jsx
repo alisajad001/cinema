@@ -9,7 +9,10 @@ const useFetch = (endpoint) => {
     return response.data;
   };
 
-  const { data, error, isLoading } = useQuery(endpoint, fetchData);
+  const { data, error, isLoading } = useQuery(endpoint, fetchData, {
+    refetchOnWindowFocus: false,
+  });
+  console.log(data);
 
   return { data, isLoading, error };
 };

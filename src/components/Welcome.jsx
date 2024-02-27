@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Welcome = ({ query, setQuery }) => {
   return (
     <section className="h-96 mb-10 flex items-center bg-gradientPrimary">

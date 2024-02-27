@@ -15,6 +15,8 @@ Cinema app utilizes an API to fetch movie data and offers several features for a
 
 - ✅ React JS version 18
 - ✅ Tailwind CSS
+- ✅ React Query (Fetch data)
+- ✅ Axios
 
 ---
 

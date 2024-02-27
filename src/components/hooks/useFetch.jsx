@@ -1,35 +1,17 @@
-// useFetch.jsx
-import { useState, useEffect } from 'react';
+import { useQuery } from 'react-query';
 import axios from 'axios';
 
-const useFetch = (url) => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+const useFetch = (endpoint) => {
+  const fetchData = async () => {
+    const response = await axios.get(
+      `${endpoint}api_key=${import.meta.env.VITE_REACT_APP_TMDB_API_KEY}`,
+    );
+    return response.data;
+  };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(url, {
-          headers: {
-            Authorization: `Bearer ${
-              import.meta.env.VITE_REACT_APP_TMDB_API_KEY
-            }`,
-          },
-        });
+  const { data, error, isLoading } = useQuery(endpoint, fetchData);
 
-        setData(response.data);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [url]);
-
-  return { data, loading, error };
+  return { data, isLoading, error };
 };
 
 export default useFetch;

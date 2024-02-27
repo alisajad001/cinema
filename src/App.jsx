@@ -3,16 +3,17 @@ import Navbar from './components/Navbar';
 import Footer from './sections/Footer';
 import Home from './sections/Home';
 import MoviesList from './components/MoviesList';
-import useFetch from './components/hooks/useFetch';
 import { useState } from 'react';
 import MovieDetails from './components/MovieDetails';
+import { QueryClientProvider, QueryClient } from 'react-query';
 
 const App = () => {
   const [query, setQuery] = useState('');
+  const queryClient = new QueryClient();
   const apiURL = `search/movie?query=${query}&`;
 
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <Navbar />
       <Routes>
         <Route
@@ -37,7 +38,7 @@ const App = () => {
         <Route path="movie/:id" element={<MovieDetails />} />
       </Routes>
       <Footer />
-    </>
+    </QueryClientProvider>
   );
 };
 

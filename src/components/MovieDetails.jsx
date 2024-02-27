@@ -4,13 +4,8 @@ import useFetch from './hooks/useFetch';
 const MovieDetails = () => {
   const { id } = useParams();
 
-  const apiURL = `https://api.themoviedb.org/3/movie/${id}?api_key=${
-    import.meta.env.VITE_REACT_APP_TMDB_API_KEY
-  }`;
-
-  const apiCasts = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${
-    import.meta.env.VITE_REACT_APP_TMDB_API_KEY
-  }`;
+  const apiURL = `https://api.themoviedb.org/3/movie/${id}?`;
+  const apiCasts = `https://api.themoviedb.org/3/movie/${id}/credits?`;
 
   const { data, loading, error } = useFetch(apiURL);
   const {

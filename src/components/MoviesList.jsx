@@ -2,9 +2,7 @@ import Movie from './Movie';
 import useFetch from './hooks/useFetch';
 
 const MoviesList = ({ apiEndpoint, title }) => {
-  const apiURL = `https://api.themoviedb.org/3/${apiEndpoint}api_key=${
-    import.meta.env.VITE_REACT_APP_TMDB_API_KEY
-  }`;
+  const apiURL = `https://api.themoviedb.org/3/${apiEndpoint}`;
   const { data, loading, error } = useFetch(apiURL);
   return (
     <section className="pt-2">

@@ -1,31 +1,52 @@
+import React from 'react';
+
 const MovieDetailsHeader = ({ data }) => {
+  if (!data) {
+    return <p>No data available for the movie.</p>;
+  }
+
+  const {
+    backdrop_path,
+    title,
+    release_date,
+    tagline,
+    genres,
+    runtime,
+    vote_average,
+    overview,
+  } = data;
+
+  const backdropUrl = backdrop_path
+    ? `https://image.tmdb.org/t/p/original/${backdrop_path}`
+    : 'https://via.placeholder.com/1920x1080/000000/?text=Cover+Image+Coming+Soon';
+
   return (
     <div
       className="flex bg-cover bg-center justify-center items-center bg-fixed h-[600px]"
       style={{
-        backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6) , rgba(0, 0, 0, 0)) , url(https://image.tmdb.org/t/p/original/${data.backdrop_path})`,
+        backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6) , rgba(0, 0, 0, 0)) , url(${backdropUrl})`,
       }}
     >
       <div className="p-4 sm:container flex flex-col sm:flex-row gap-10">
         <div>
           <h2 className="text-3xl sm:text-6xl font-bold">
-            {data.title}{' '}
-            <span className=" text-sm sm:text-3xl">{`(${data.release_date.slice(
+            {title}{' '}
+            <span className=" text-sm sm:text-3xl">{`(${release_date.slice(
               0,
               4,
             )})`}</span>
           </h2>
           <p className="mt-2 text-lg sm:text-2xl text-gray-300">
-            {data.tagline}
+            {tagline || 'No tagline available'}
           </p>
 
           <div className="text-sm mt-3 flex flex-col sm:flex-row sm:gap-7">
-            <span>{data.genres.map((genre) => genre.name).join(', ')}</span>
-            <span>⏲{data.runtime && `${data.runtime} mins`}</span>
             <span>
-              {data.vote_average && `⭐ ${data.vote_average.toFixed(1)}`}
+              {genres && genres.map((genre) => genre.name).join(', ')}
             </span>
-            <span>{data.release_date.slice(0, 4)}</span>
+            <span>⏲{runtime && `${runtime} mins`}</span>
+            <span>{vote_average && `⭐ ${vote_average.toFixed(1)}`}</span>
+            <span>{release_date.slice(0, 4)}</span>
           </div>
 
           <div>
@@ -33,7 +54,7 @@ const MovieDetailsHeader = ({ data }) => {
               Overview
             </h3>
             <p className="text-sm leading-6 text-white max-w-xl">
-              {data.overview}
+              {overview || 'No overview available'}
             </p>
           </div>
         </div>

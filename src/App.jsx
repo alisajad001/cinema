@@ -4,8 +4,8 @@ import Footer from './sections/Footer';
 import Home from './sections/Home';
 import MoviesList from './components/MoviesList';
 import { useState } from 'react';
-import MovieDetails from './components/MovieDetails';
 import { QueryClientProvider, QueryClient } from 'react-query';
+import MovieDetailsSection from './components/MovieDetailsSection';
 
 const App = () => {
   const [query, setQuery] = useState('');
@@ -35,7 +35,7 @@ const App = () => {
           }
         />
 
-        <Route path="movie/:id" element={<MovieDetails />} />
+        <Route path="movie/:id" element={<MovieDetailsSection />} />
       </Routes>
       <Footer />
     </QueryClientProvider>

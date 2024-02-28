@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import useFetch from './hooks/useFetch';
 import MovieDetailsHeader from './MovieDetailsHeader';
-import MovieDetailsCast from './MovieDetailsCast';
+import MovieCastsList from './MovieCastsList';
 
 const MovieDetailsSection = () => {
   const { id } = useParams();
@@ -27,7 +27,7 @@ const MovieDetailsSection = () => {
           <MovieDetailsHeader data={data} />
 
           {/* Cast */}
-          <MovieDetailsCast
+          <MovieCastsList
             casts={casts}
             castLoading={castLoading}
             castError={castError}

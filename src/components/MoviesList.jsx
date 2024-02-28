@@ -1,5 +1,5 @@
 import Movie from './Movie';
-import useFetch from './hooks/useFetch';
+import useFetch from '../hooks/useFetch';
 
 const MoviesList = ({ apiEndpoint, title }) => {
   const apiURL = `https://api.themoviedb.org/3/${apiEndpoint}`;

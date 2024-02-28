@@ -8,12 +8,14 @@ import { QueryClientProvider, QueryClient } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import MovieDetailsSection from './components/MovieDetailsSection';
 import NotFoundPage from './components/NotFoundPage';
+import { getApiURL } from './utils/apiUtils';
+import RenderMoviesList from './components/RenderMovieList';
 
 const queryClient = new QueryClient();
 
 const App = () => {
-  const [query, setQuery] = useState('');
-  const apiURL = `search/movie?query=${query}&`;
+  const [query, setQuery] = useState('asd');
+  const apiURL = getApiURL(query);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -23,17 +25,7 @@ const App = () => {
           path="/"
           element={
             <Home query={query} setQuery={setQuery}>
-              {query.length > 0 ? (
-                <MoviesList apiEndpoint={apiURL} title="Search result" />
-              ) : (
-                <>
-                  <MoviesList
-                    apiEndpoint="trending/movie/week?"
-                    title="Trending"
-                  />
-                  <MoviesList apiEndpoint="movie/popular?" title="Popular" />
-                </>
-              )}
+              <RenderMoviesList query={query} />
             </Home>
           }
         />

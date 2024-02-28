@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import useFetch from './hooks/useFetch';
+import useFetch from '../hooks/useFetch';
 import MovieDetailsHeader from './MovieDetailsHeader';
 import MovieCastsList from './MovieCastsList';
 

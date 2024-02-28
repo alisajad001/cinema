@@ -6,7 +6,7 @@ const MovieCast = ({ cast }) => {
       <img
         src={
           cast.profile_path
-            ? `https://image.tmdb.org/t/p/w500/${cast.profile_path}`
+            ? `https://image.tmdb.org/t/p/w200/${cast.profile_path}`
             : 'https://via.placeholder.com/300x450'
         }
         alt={cast.name || 'Actor Profile'}

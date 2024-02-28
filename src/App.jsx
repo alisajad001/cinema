@@ -5,11 +5,14 @@ import Home from './sections/Home';
 import MoviesList from './components/MoviesList';
 import { useState } from 'react';
 import { QueryClientProvider, QueryClient } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 import MovieDetailsSection from './components/MovieDetailsSection';
+import NotFoundPage from './components/NotFoundPage';
+
+const queryClient = new QueryClient();
 
 const App = () => {
   const [query, setQuery] = useState('');
-  const queryClient = new QueryClient();
   const apiURL = `search/movie?query=${query}&`;
 
   return (
@@ -36,8 +39,10 @@ const App = () => {
         />
 
         <Route path="movie/:id" element={<MovieDetailsSection />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 };

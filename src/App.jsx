@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './sections/Footer';
 import Home from './sections/Home';
-import MoviesList from './components/MoviesList';
 import { useState } from 'react';
 import { QueryClientProvider, QueryClient } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
@@ -15,7 +14,6 @@ const queryClient = new QueryClient();
 
 const App = () => {
   const [query, setQuery] = useState('');
-  const apiURL = getApiURL(query);
 
   return (
     <QueryClientProvider client={queryClient}>

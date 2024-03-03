@@ -14,7 +14,7 @@ import RenderMoviesList from './components/RenderMovieList';
 const queryClient = new QueryClient();
 
 const App = () => {
-  const [query, setQuery] = useState('asd');
+  const [query, setQuery] = useState('');
   const apiURL = getApiURL(query);
 
   return (

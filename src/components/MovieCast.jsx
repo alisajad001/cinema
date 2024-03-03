@@ -1,5 +1,3 @@
-import React from 'react';
-
 const MovieCast = ({ cast }) => {
   return (
     <div key={cast.id} className="flex flex-col items-center text-center">
@@ -7,7 +5,7 @@ const MovieCast = ({ cast }) => {
         src={
           cast.profile_path
             ? `https://image.tmdb.org/t/p/w200/${cast.profile_path}`
-            : 'https://via.placeholder.com/300x450'
+            : 'https://placehold.co/300x450/032541/FFF?text=Image not found'
         }
         alt={cast.name || 'Actor Profile'}
         className="w-36 rounded-md object-cover"

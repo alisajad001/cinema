@@ -13,13 +13,18 @@ const MovieCastsList = ({ casts, castLoading, castError, data }) => {
 
   return (
     <section className="flex flex-col-reverse w-full max-w-6xl mx-auto sm:flex-row-reverse mb-12">
-      <div className="p-4 sm:container mx-auto">
-        <h3 className="text-lg font-semibold mb-5">Cast</h3>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 justify-items-center gap-6">
-          {casts &&
-            casts.cast.map((cast) => <MovieCast key={cast.id} cast={cast} />)}
-        </div>
-      </div>
+      {casts.length > 0 ? (
+        <>
+          <div className="p-4 sm:container mx-auto">
+            <h3 className="text-lg font-semibold mb-5">Cast</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 justify-items-center gap-6">
+              {casts.cast.map((cast) => (
+                <MovieCast key={cast.id} cast={cast} />
+              ))}
+            </div>
+          </div>
+        </>
+      ) : null}
 
       {data ? <MovieDetails data={data} /> : <p>No movie details available.</p>}
     </section>

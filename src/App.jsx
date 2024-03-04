@@ -7,7 +7,6 @@ import { QueryClientProvider, QueryClient } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import MovieDetailsSection from './components/MovieDetailsSection';
 import NotFoundPage from './components/NotFoundPage';
-import { getApiURL } from './utils/apiUtils';
 import RenderMoviesList from './components/RenderMovieList';
 
 const queryClient = new QueryClient();

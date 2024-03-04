@@ -9,7 +9,7 @@ const RenderMoviesList = ({ query }) => {
   ) : (
     <>
       <MoviesList apiEndpoint="trending/movie/week?" title="Trending" />
-      <MoviesList apiEndpoint="movie/popular?" title="Popular" />
+      <MoviesList apiEndpoint="movie/top_rated?" title="Top Rated" />
     </>
   );
 };

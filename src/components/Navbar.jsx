@@ -6,7 +6,7 @@ const Navbar = () => {
       <Link to="/" className="font-extrabold uppercase">
         Cinema <span className="text-primary">MDB</span>
       </Link>
-      <span className="text-secondary">This website is under development</span>
+      <span className="text-secondary">under development</span>
       {/* <Link to="/favorites" className="font-bold uppercase text-secondary">
         ❤ Favorites
       </Link> */}

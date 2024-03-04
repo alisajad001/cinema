@@ -18,11 +18,11 @@ const MovieDetailsHeader = ({ data }) => {
 
   const backdropUrl = backdrop_path
     ? `https://image.tmdb.org/t/p/original/${backdrop_path}`
-    : 'https://via.placeholder.com/1920x1080/000000/?text=Cover+Image+Coming+Soon';
+    : `https://placehold.co/1920x700/001/FFF?text=Image+coming+soon...`;
 
   return (
     <div
-      className="flex bg-cover bg-center justify-center items-center bg-fixed h-[600px]"
+      className="flex bg-no-repeat sm:bg-cover bg-center justify-center items-center bg-fixed py-32"
       style={{
         backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6) , rgba(0, 0, 0, 0)) , url(${backdropUrl})`,
       }}

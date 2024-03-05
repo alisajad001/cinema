@@ -10,7 +10,7 @@ const MovieDetailsSection = () => {
 
   const apiCasts = `https://api.themoviedb.org/3/movie/${id}/credits?`;
 
-  const { data, loading, error } = useFetch(apiURL);
+  const { data, isLoading, error, isError } = useFetch(apiURL);
   const {
     data: casts,
     loading: castLoading,
@@ -19,12 +19,12 @@ const MovieDetailsSection = () => {
 
   return (
     <section className="h-auto text-white">
-      {loading && <p>Loading...</p>}
-      {error && <p>Error: {error.message}</p>}
+      {isLoading && 'Loading...'}
+      {isError && error.message}
       {data && (
         <div className="w-full flex flex-col">
           {/* Header */}
-          <MovieDetailsHeader data={data} />
+          <MovieDetailsHeader data={data} isLoading={isLoading} />
 
           {/* Cast */}
           <MovieCastsList

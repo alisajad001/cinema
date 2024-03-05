@@ -3,7 +3,7 @@ import useFetch from '../hooks/useFetch';
 
 const MoviesList = ({ apiEndpoint, title }) => {
   const apiURL = `https://api.themoviedb.org/3/${apiEndpoint}`;
-  const { data, loading, error } = useFetch(apiURL);
+  const { data, isLoading, isError, error } = useFetch(apiURL);
   return (
     <section className="pt-2">
       <h2 className="text-xl text-white font-semibold">
@@ -11,9 +11,9 @@ const MoviesList = ({ apiEndpoint, title }) => {
       </h2>
 
       <div className="flex gap-4 overflow-x-scroll py-5">
-        {loading && <p>Loading...</p>}
+        {isLoading && <p>Loading...</p>}
 
-        {error && <p>Error: {error.message}</p>}
+        {isError && <p>Error: {error.message}</p>}
 
         {data &&
           data.results.map((movie) => <Movie key={movie.id} {...movie} />)}

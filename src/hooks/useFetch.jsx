@@ -21,14 +21,14 @@ const useFetch = (endpoint) => {
     }
   };
 
-  const { data, error, isLoading } = useQuery(endpoint, fetchData, {
+  const { data, error, isLoading, isError } = useQuery(endpoint, fetchData, {
     refetchOnWindowFocus: false,
     // The onCancel function is called when the query is cancelled
     onCancel: () =>
       cancelTokenSource.cancel('Query was cancelled by React Query.'),
   });
 
-  return { data, isLoading, error };
+  return { data, isLoading, error, isError };
 };
 
 export default useFetch;

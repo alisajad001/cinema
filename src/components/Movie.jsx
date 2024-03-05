@@ -18,7 +18,11 @@ const Movie = ({ title, poster_path, vote_average, release_date, id }) => {
       onClick={handleClick}
     >
       <img
-        src={poster_path ? movieImage : 'https://via.placeholder.com/300x450'}
+        src={
+          poster_path
+            ? movieImage
+            : 'https://placehold.co/300x450/001/FFF?text=Image not found'
+        }
         alt={title}
         title={title}
         className="rounded-lg hover:saturate-150 hover:-translate-y-2 transition object-cover w-full"

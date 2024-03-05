@@ -10,17 +10,17 @@ const MovieDetails = ({ data }) => {
 
       <div className="mt-3">
         <p className="text-primary font-bold">Budget</p>
-        <p>{`$${data.budget}`}</p>
+        <p>{`${data.budget ? `$${data.budget}` : 'N/A'}`}</p>
       </div>
 
       <div className="mt-3">
         <p className="text-primary font-bold">Revenue</p>
-        <p>{`$${data.revenue}`}</p>
+        <p>{`${data.revenue ? `$${data.revenue}` : 'N/A'}`}</p>
       </div>
 
       <div className="mt-3">
         <p className="text-primary font-bold">Runtime</p>
-        <p>{`${data.runtime} mins`}</p>
+        <p>{`${data.runtime ? `${data.runtime / 60} Hour` : 'N/A'}`}</p>
       </div>
 
       {data.production_companies.length > 0 && (

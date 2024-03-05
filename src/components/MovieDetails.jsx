@@ -8,26 +8,20 @@ const MovieDetails = ({ data }) => {
         <p>{data.release_date}</p>
       </div>
 
-      {data.budget && (
-        <div className="mt-3">
-          <p className="text-primary font-bold">Budget</p>
-          <p>{`$${data.budget}`}</p>
-        </div>
-      )}
+      <div className="mt-3">
+        <p className="text-primary font-bold">Budget</p>
+        <p>{`$${data.budget}`}</p>
+      </div>
 
-      {data.revenue && (
-        <div className="mt-3">
-          <p className="text-primary font-bold">Revenue</p>
-          <p>{`$${data.revenue}`}</p>
-        </div>
-      )}
+      <div className="mt-3">
+        <p className="text-primary font-bold">Revenue</p>
+        <p>{`$${data.revenue}`}</p>
+      </div>
 
-      {data.runtime && (
-        <div className="mt-3">
-          <p className="text-primary font-bold">Runtime</p>
-          <p>{`${data.runtime} mins`}</p>
-        </div>
-      )}
+      <div className="mt-3">
+        <p className="text-primary font-bold">Runtime</p>
+        <p>{`${data.runtime} mins`}</p>
+      </div>
 
       {data.production_companies.length > 0 && (
         <div className="mt-3">

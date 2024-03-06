@@ -51,7 +51,9 @@ const MovieDetails = ({ data }) => {
 
       {data.spoken_languages.length > 0 && (
         <div className="mt-3">
-          <p className="text-primary font-bold">Languages</p>
+          <p className="text-primary font-bold">
+            {data.spoken_languages > 1 ? 'Languages' : 'Language'}
+          </p>
           <ul>
             {data.spoken_languages.map((language) => (
               <li key={language.iso_639_1}>{language.name}</li>

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const MovieDetails = ({ data }) => {
   return (
     <div className="p-4 bg-black/30 w-full sm:w-96 py-10 sm:pt-12">

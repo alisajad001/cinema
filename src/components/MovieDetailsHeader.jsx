@@ -14,6 +14,8 @@ const MovieDetailsHeader = ({ data }) => {
     overview,
   } = data;
 
+  const movieRuntime = (runtime / 60).toFixed(1);
+
   const backdropUrl = backdrop_path
     ? `https://image.tmdb.org/t/p/original/${backdrop_path}`
     : `https://placehold.co/1920x700/001/FFF?text=Image+coming+soon...`;
@@ -42,7 +44,7 @@ const MovieDetailsHeader = ({ data }) => {
             <span>
               {genres && genres.map((genre) => genre.name).join(', ')}
             </span>
-            <span>⏲{runtime && `${runtime} mins`}</span>
+            <span>⏲{runtime && `${movieRuntime} hour`}</span>
             <span>{vote_average && `⭐ ${vote_average.toFixed(1)}`}</span>
             <span>{release_date.slice(0, 4)}</span>
           </div>

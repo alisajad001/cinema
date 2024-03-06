@@ -10,7 +10,7 @@ const MoviesList = ({ apiEndpoint, title }) => {
         {title} <span className="text-primary">Movies</span>
       </h2>
 
-      <div className="flex gap-4 overflow-x-scroll py-5">
+      <div className="flex gap-2 overflow-x-scroll py-5">
         {isLoading && <p>Loading...</p>}
 
         {isError && <p>Error: {error.message}</p>}

@@ -40,7 +40,9 @@ const MovieDetails = ({ data }) => {
 
       {data.production_countries.length > 0 && (
         <div className="mt-3">
-          <p className="text-primary font-bold">Countries</p>
+          <p className="text-primary font-bold">
+            {data.production_countries.length > 1 ? 'Countries' : 'Country'}
+          </p>
           <ul>
             {data.production_countries.map((country) => (
               <li key={country.iso_3166_1}>{country.name}</li>

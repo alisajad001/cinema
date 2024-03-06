@@ -1,5 +1,3 @@
-import React from 'react';
-
 const MovieDetailsHeader = ({ data }) => {
   if (!data) {
     return <p>No data available for the movie.</p>;

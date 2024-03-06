@@ -11,9 +11,11 @@ const MovieDetailsSection = () => {
   const apiCasts = `https://api.themoviedb.org/3/movie/${id}/credits?`;
 
   const { data, isLoading, error, isError } = useFetch(apiURL);
+
   const {
     data: casts,
-    loading: castLoading,
+    isLoading: castLoading,
+    isError: castIsError,
     error: castError,
   } = useFetch(apiCasts);
 
@@ -31,6 +33,7 @@ const MovieDetailsSection = () => {
             casts={casts}
             castLoading={castLoading}
             castError={castError}
+            castIsError={castIsError}
             data={data}
           />
         </div>

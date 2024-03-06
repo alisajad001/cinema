@@ -1,4 +1,8 @@
 const MovieDetails = ({ data }) => {
+  // Seperating thousands with comma
+  const movieBudget = data.budget.toLocaleString();
+  const movieRevenue = data.revenue.toLocaleString();
+
   return (
     <div className="p-4 bg-black/30 w-full sm:w-96 py-10 sm:pt-12">
       <div className="mt-3">
@@ -8,12 +12,12 @@ const MovieDetails = ({ data }) => {
 
       <div className="mt-3">
         <p className="text-primary font-bold">Budget</p>
-        <p>{`${data.budget ? `$${data.budget}` : 'N/A'}`}</p>
+        <p>{`${data.budget ? `$${movieBudget}` : 'N/A'}`}</p>
       </div>
 
       <div className="mt-3">
         <p className="text-primary font-bold">Revenue</p>
-        <p>{`${data.revenue ? `$${data.revenue}` : 'N/A'}`}</p>
+        <p>{`${data.revenue ? `$${movieRevenue}` : 'N/A'}`}</p>
       </div>
 
       <div className="mt-3">

@@ -3,6 +3,8 @@ const MovieDetails = ({ data }) => {
   const movieBudget = data.budget.toLocaleString();
   const movieRevenue = data.revenue.toLocaleString();
 
+  const movieRuntime = (data.runtime / 60).toFixed(1);
+
   return (
     <div className="p-4 bg-black/30 w-full sm:w-96 py-10 sm:pt-12">
       <div className="mt-3">
@@ -22,7 +24,7 @@ const MovieDetails = ({ data }) => {
 
       <div className="mt-3">
         <p className="text-primary font-bold">Runtime</p>
-        <p>{`${data.runtime ? `${data.runtime / 60} Hour` : 'N/A'}`}</p>
+        <p>{`${data.runtime ? `${movieRuntime} Hour` : 'N/A'}`}</p>
       </div>
 
       {data.production_companies.length > 0 && (

@@ -23,7 +23,7 @@ Cinema app utilizes an API to fetch movie data and offers several features for a
 
 ### Deployment 🪐🌌🌍
 
-- Netlify - (Will be updated soon)
+- Netlify - [Live demo](https://cinemamdb.netlify.app)
 
 ---
 

@@ -24,7 +24,7 @@ const MovieDetailsHeader = ({ data }) => {
     <div
       className="flex bg-no-repeat bg-cover bg-center justify-center items-center py-32"
       style={{
-        backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6) , rgba(0, 0, 0, 0)) , url(${backdropUrl})`,
+        backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2) , rgba(0, 0, 0, 0)) , url(${backdropUrl})`,
       }}
     >
       <div className="p-4 sm:container flex flex-col sm:flex-row gap-10">

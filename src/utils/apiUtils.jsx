@@ -1,3 +1,4 @@
-const getApiURL = (query) => `search/movie?query=${query}&`;
+// Get Movie by query string
+const getMovieEndpoint = (query) => `search/movie?query=${query}&`;
 
-export { getApiURL };
+export { getMovieEndpoint };

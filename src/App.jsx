@@ -23,7 +23,7 @@ const App = () => {
           path="/"
           element={
             <Home query={query} setQuery={setQuery}>
-              <RenderMoviesList query={query} />
+              <RenderMoviesList query={query} setQuery={setQuery} />
             </Home>
           }
         />

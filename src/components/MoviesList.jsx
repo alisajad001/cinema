@@ -1,7 +1,7 @@
 import Movie from './Movie';
 import useFetch from '../hooks/useFetch';
 
-const MoviesList = ({ apiEndpoint, title }) => {
+const MoviesList = ({ apiEndpoint, title, setQuery }) => {
   const apiURL = `https://api.themoviedb.org/3/${apiEndpoint}`;
   const { data, isLoading, isError, error } = useFetch(apiURL);
   return (
@@ -16,7 +16,9 @@ const MoviesList = ({ apiEndpoint, title }) => {
         {isError && <p>Error: {error.message}</p>}
 
         {data &&
-          data.results.map((movie) => <Movie key={movie.id} {...movie} />)}
+          data.results.map((movie) => (
+            <Movie key={movie.id} {...movie} setQuery={setQuery} />
+          ))}
       </div>
     </section>
   );

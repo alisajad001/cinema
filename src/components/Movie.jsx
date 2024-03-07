@@ -1,10 +1,18 @@
 import { useNavigate } from 'react-router-dom';
 
-const Movie = ({ title, poster_path, vote_average, release_date, id }) => {
+const Movie = ({
+  title,
+  poster_path,
+  vote_average,
+  release_date,
+  id,
+  setQuery,
+}) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
     navigate(`/movie/${id}`);
+    setQuery('');
   };
 
   const movieImage = `https://image.tmdb.org/t/p/w500/${poster_path}`;

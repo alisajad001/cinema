@@ -7,6 +7,7 @@ Cinema app utilizes an API to fetch movie data and offers several features for a
 ### Features 🎬
 
 - **Trending Movies:** Discover the latest trending movies.
+- **Popular Movies:** Discover the most popular movies.
 - **Movie Details:** Get in-depth information about each movie.
 - **Movie Actors:** Explore details about the actors in your favorite movies.
 - **Add to favorite:** Add your favorite movie to the favorites.

@@ -2,11 +2,12 @@ import { useParams } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 import MovieDetailsHeader from './MovieDetailsHeader';
 import MovieCastsList from './MovieCastsList';
+import { getMovieById } from '../utils/apiUtils';
 
 const MovieDetailsSection = () => {
   const { movieId } = useParams();
 
-  const apiURL = `https://api.themoviedb.org/3/movie/${movieId}?`;
+  const apiURL = getMovieById(movieId);
 
   const apiCasts = `https://api.themoviedb.org/3/movie/${movieId}/credits?`;
 

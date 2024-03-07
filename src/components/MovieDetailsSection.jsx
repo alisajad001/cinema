@@ -4,11 +4,11 @@ import MovieDetailsHeader from './MovieDetailsHeader';
 import MovieCastsList from './MovieCastsList';
 
 const MovieDetailsSection = () => {
-  const { id } = useParams();
+  const { movieId } = useParams();
 
-  const apiURL = `https://api.themoviedb.org/3/movie/${id}?`;
+  const apiURL = `https://api.themoviedb.org/3/movie/${movieId}?`;
 
-  const apiCasts = `https://api.themoviedb.org/3/movie/${id}/credits?`;
+  const apiCasts = `https://api.themoviedb.org/3/movie/${movieId}/credits?`;
 
   const { data, isLoading, error, isError } = useFetch(apiURL);
 

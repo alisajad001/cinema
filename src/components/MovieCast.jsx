@@ -1,6 +1,18 @@
+import { useNavigate } from 'react-router-dom';
+
 const MovieCast = ({ cast }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/cast/${cast.id}`);
+  };
+
   return (
-    <div key={cast.id} className="flex flex-col items-center text-center">
+    <div
+      key={cast.id}
+      className="flex flex-col items-center text-center cursor-pointer"
+      onClick={handleClick}
+    >
       <img
         src={
           cast.profile_path

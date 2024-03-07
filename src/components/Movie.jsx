@@ -14,7 +14,7 @@ const Movie = ({ title, poster_path, vote_average, release_date, id }) => {
 
   return (
     <div
-      className="w-32 sm:w-60 rounded-lg cursor-pointer transition flex-shrink-0"
+      className="w-32 sm:w-52 rounded-lg cursor-pointer transition flex-shrink-0"
       onClick={handleClick}
     >
       <img

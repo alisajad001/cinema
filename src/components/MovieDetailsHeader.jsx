@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 const MovieDetailsHeader = ({ data }) => {
   if (!data) {
     return <p>No data available for the movie.</p>;
@@ -13,6 +15,14 @@ const MovieDetailsHeader = ({ data }) => {
     vote_average,
     overview,
   } = data;
+
+  useEffect(() => {
+    document.title = `${title} - Movie`;
+
+    return () => {
+      document.title = '🎬 Cinema | Ali Sajad';
+    };
+  }, [title]);
 
   const movieRuntime = (runtime / 60).toFixed(1);
 

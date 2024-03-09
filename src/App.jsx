@@ -9,6 +9,7 @@ import MovieDetailsSection from './components/MovieDetailsSection';
 import NotFoundPage from './components/NotFoundPage';
 import RenderMoviesList from './components/RenderMovieList';
 import MovieCastDetails from './components/MovieCastDetails';
+import Favorites from './sections/Favorites';
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => {
         />
 
         <Route path="movie/:movieId" element={<MovieDetailsSection />} />
+        <Route path="favorites" element={<Favorites />} />
         <Route path="cast/:castId" element={<MovieCastDetails />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

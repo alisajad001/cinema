@@ -5,6 +5,7 @@ const MovieCast = ({ cast }) => {
 
   const handleClick = () => {
     navigate(`/cast/${cast.id}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (

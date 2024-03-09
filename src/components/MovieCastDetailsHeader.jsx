@@ -3,6 +3,7 @@ import Movie from './Movie';
 
 const MovieCastDetailsHeader = ({ personData, knownFor }) => {
   const [readMore, setReadMore] = useState(false);
+  const [visibleMovies, setVisibleMovies] = useState(8);
 
   const { name, birthday, profile_path, place_of_birth, biography } =
     personData;
@@ -30,7 +31,7 @@ const MovieCastDetailsHeader = ({ personData, knownFor }) => {
 
           <p className="text-primary">
             Biography:{' '}
-            <div className="text-white/60">
+            <span className="text-white/60">
               {readMore ? biography : biography.slice(0, 150)}
               <button
                 className="text-primary"
@@ -38,7 +39,7 @@ const MovieCastDetailsHeader = ({ personData, knownFor }) => {
               >
                 &nbsp; {readMore ? 'show less...' : 'show more...'}
               </button>
-            </div>
+            </span>
           </p>
         </div>
       </div>
@@ -47,7 +48,7 @@ const MovieCastDetailsHeader = ({ personData, knownFor }) => {
         <h2 className="text-white text-2xl mb-5 font-semibold">Known for</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 justify-items-center gap-4">
           {knownFor &&
-            knownFor.cast.map((movie) => {
+            knownFor.cast.slice(0, visibleMovies).map((movie) => {
               return (
                 <Movie
                   key={movie.id}
@@ -60,6 +61,14 @@ const MovieCastDetailsHeader = ({ personData, knownFor }) => {
                 />
               );
             })}
+          {knownFor && knownFor.cast.length > visibleMovies && (
+            <button
+              className="bg-secondary rounded-md p-3"
+              onClick={() => setVisibleMovies((prev) => prev + 8)}
+            >
+              Load more
+            </button>
+          )}
         </div>
       </div>
     </div>

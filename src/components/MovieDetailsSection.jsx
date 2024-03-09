@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 import MovieDetailsHeader from './MovieDetailsHeader';
 import MovieCastsList from './MovieCastsList';
+import Loader from './Loader';
 import { getMovieById, getMovieCasts } from '../utils/apiUtils';
 
 const MovieDetailsSection = () => {
@@ -22,21 +23,16 @@ const MovieDetailsSection = () => {
 
   return (
     <section className="h-auto text-white">
-      {isLoading && 'Loading...'}
-      {isError && error.message}
+      {isLoading && (
+        <Loader className="h-screen flex items-center justify-center" />
+      )}
       {data && (
         <div className="w-full flex flex-col">
           {/* Header */}
-          <MovieDetailsHeader data={data} isLoading={isLoading} />
+          <MovieDetailsHeader data={data} />
 
           {/* Cast */}
-          <MovieCastsList
-            casts={casts}
-            castLoading={castLoading}
-            castError={castError}
-            castIsError={castIsError}
-            data={data}
-          />
+          <MovieCastsList casts={casts} data={data} />
         </div>
       )}
     </section>

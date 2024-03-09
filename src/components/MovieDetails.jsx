@@ -6,7 +6,7 @@ const MovieDetails = ({ data }) => {
   const movieRuntime = (data.runtime / 60).toFixed(1);
 
   return (
-    <div className="p-4 bg-black/30 w-full sm:w-96 py-10 sm:pt-12">
+    <div className="p-4 bg-black/30 w-full sm:w-80 py-10 sm:pt-12">
       <div className="mt-3">
         <p className="text-primary font-bold">Release Date</p>
         <p>{data.release_date}</p>

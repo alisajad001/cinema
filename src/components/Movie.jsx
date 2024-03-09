@@ -8,6 +8,7 @@ const Movie = ({
   id,
   setQuery,
   className,
+  customText,
 }) => {
   const navigate = useNavigate();
 
@@ -42,17 +43,19 @@ const Movie = ({
       <h3 className="text-sm font-semibold mt-2 text-white">
         {title.length < 18 ? title : `${movieTitle}...`}
       </h3>
-      <div className="flex justify-between mt-1">
-        <span className="font-semibold text-[10px] text-white">
-          {movieReleaseDate}
-        </span>
-        <span className="block text-yellow-400 text-[10px]">
-          <span className="bg-yellow-400 text-dark px-[2px] rounded-sm font-bold">
-            IMDB
-          </span>{' '}
-          {movieRating}
-        </span>
-      </div>
+      {<span className="text-primary">{customText}</span> || (
+        <div className="flex justify-between mt-1">
+          <span className="font-semibold text-[10px] text-white">
+            {movieReleaseDate}
+          </span>
+          <span className="block text-yellow-400 text-[10px]">
+            <span className="bg-yellow-400 text-dark px-[2px] rounded-sm font-bold">
+              IMDB
+            </span>{' '}
+            {movieRating}
+          </span>
+        </div>
+      )}
     </div>
   );
 };

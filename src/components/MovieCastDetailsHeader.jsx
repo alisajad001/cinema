@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import Movie from './Movie';
 
 const MovieCastDetailsHeader = ({ personData, knownFor }) => {
+  const [readMore, setReadMore] = useState(false);
+
   const { name, birthday, profile_path, place_of_birth, biography } =
     personData;
 
@@ -26,7 +29,16 @@ const MovieCastDetailsHeader = ({ personData, knownFor }) => {
           </p>
 
           <p className="text-primary">
-            Biography: <span className="text-white/60">{biography}</span>
+            Biography:{' '}
+            <div className="text-white/60">
+              {readMore ? biography : biography.slice(0, 150)}
+              <button
+                className="text-primary"
+                onClick={() => setReadMore((prev) => !prev)}
+              >
+                &nbsp; {readMore ? 'show less...' : 'show more...'}
+              </button>
+            </div>
           </p>
         </div>
       </div>

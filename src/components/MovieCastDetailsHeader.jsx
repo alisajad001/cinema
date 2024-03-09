@@ -12,7 +12,11 @@ const MovieCastDetailsHeader = ({ personData, knownFor }) => {
     <div className="flex flex-col md:flex-row py-12 px-3 sm:px-10 gap-5 items-center md:items-start">
       <div className="w-full  sm:w-1/2 flex flex-col items-center sm:items-start sm:justify-start justify-center">
         <img
-          src={`https://image.tmdb.org/t/p/w500/${profile_path}`}
+          src={
+            profile_path
+              ? `https://image.tmdb.org/t/p/w500/${profile_path}`
+              : 'https://placehold.co/300x450/001/FFF?text=Image not found'
+          }
           alt={name || 'Actor Profile'}
           className="w-72 sm:w-80 object-cover rounded-md"
         />

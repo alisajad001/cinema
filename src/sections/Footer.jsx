@@ -2,7 +2,7 @@ import tmdbLogo from '../assets/tmdb-logo.svg';
 
 const Footer = () => {
   return (
-    <footer className="bg-hero text-white text-center">
+    <footer className="bg-dark text-white text-center">
       <div className="px-3 sm:container text-sm mx-auto flex flex-col sm:flex-row justify-between items-center py-7">
         <div className="flex flex-col sm:flex-row items-center gap-3">
           <img src={tmdbLogo} alt="TMDB Icon" width="60" />

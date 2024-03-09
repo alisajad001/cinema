@@ -21,25 +21,38 @@ const MovieCastDetailsHeader = ({ personData, knownFor }) => {
           <h2 className="text-white text-xl sm:text-2xl mb-3 font-semibold">
             {name}
           </h2>
-          <p className="text-primary">
-            Birthday: <span className="text-white/60">{birthday}</span>
-          </p>
-          <p className="text-primary">
-            Place of birth:{' '}
-            <span className="text-white/60">{place_of_birth}</span>
-          </p>
+
+          {birthday && (
+            <p className="text-primary">
+              Birthday: <span className="text-white/60">{birthday}</span>
+            </p>
+          )}
+
+          {place_of_birth && (
+            <p className="text-primary">
+              Place of birth:{' '}
+              <span className="text-white/60">{place_of_birth}</span>
+            </p>
+          )}
 
           <p className="text-primary">
-            Biography:{' '}
-            <span className="text-white/60">
-              {readMore ? biography : biography.slice(0, 150)}
-              <button
-                className="text-primary"
-                onClick={() => setReadMore((prev) => !prev)}
-              >
-                &nbsp; {readMore ? 'show less...' : 'show more...'}
-              </button>
-            </span>
+            {biography && (
+              <>
+                {' '}
+                Biography:{' '}
+                <span className="text-white/60">
+                  {readMore ? biography : biography.slice(0, 150)}
+                  {biography && (
+                    <button
+                      className="text-primary"
+                      onClick={() => setReadMore((prev) => !prev)}
+                    >
+                      &nbsp; {readMore ? 'show less...' : 'show more...'}
+                    </button>
+                  )}
+                </span>
+              </>
+            )}
           </p>
         </div>
       </div>

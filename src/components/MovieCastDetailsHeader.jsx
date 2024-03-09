@@ -21,21 +21,21 @@ const MovieCastDetailsHeader = ({ personData, knownFor }) => {
           className="w-72 sm:w-80 object-cover rounded-md"
         />
 
-        <div className="flex flex-col bg-hero rounded-md mt-5 w-72 sm:w-80 p-3">
+        <div className="flex flex-col bg-dark rounded-md mt-5 w-72 sm:w-80 p-3">
           <h2 className="text-white text-xl sm:text-2xl mb-3 font-semibold">
             {name}
           </h2>
 
           {birthday && (
             <p className="text-primary">
-              Birthday: <span className="text-white/60">{birthday}</span>
+              Birthday: <span className="text-white/80">{birthday}</span>
             </p>
           )}
 
           {place_of_birth && (
             <p className="text-primary">
               Place of birth:{' '}
-              <span className="text-white/60">{place_of_birth}</span>
+              <span className="text-white/80">{place_of_birth}</span>
             </p>
           )}
 
@@ -44,7 +44,7 @@ const MovieCastDetailsHeader = ({ personData, knownFor }) => {
               <>
                 {' '}
                 Biography:{' '}
-                <span className="text-white/60">
+                <span className="text-white/80">
                   {readMore ? biography : biography.slice(0, 150)}
                   {biography && (
                     <button

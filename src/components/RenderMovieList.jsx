@@ -9,6 +9,7 @@ const RenderMoviesList = ({ query, setQuery }) => {
       apiEndpoint={apiURL}
       title="Search result"
       setQuery={setQuery}
+      query={query}
     />
   ) : (
     <>

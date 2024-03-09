@@ -2,7 +2,7 @@ import Movie from './Movie';
 import useFetch from '../hooks/useFetch';
 import Loader from './Loader';
 
-const MoviesList = ({ apiEndpoint, title, setQuery }) => {
+const MoviesList = ({ apiEndpoint, title, query, setQuery }) => {
   const apiURL = `https://api.themoviedb.org/3/${apiEndpoint}`;
   const { data, isLoading, isError, error } = useFetch(apiURL);
   return (
@@ -22,6 +22,7 @@ const MoviesList = ({ apiEndpoint, title, setQuery }) => {
               key={movie.id}
               {...movie}
               setQuery={setQuery}
+              query={query}
               className="w-32 sm:w-52"
             />
           ))}

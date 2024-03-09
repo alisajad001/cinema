@@ -7,6 +7,7 @@ const Movie = ({
   release_date,
   id,
   setQuery,
+  query,
   className,
   customText,
 }) => {
@@ -14,7 +15,7 @@ const Movie = ({
 
   const handleClick = () => {
     navigate(`/movie/${id}`);
-    setQuery('');
+    query && setQuery('');
   };
 
   const movieImage = `https://image.tmdb.org/t/p/w500/${poster_path}`;
@@ -43,7 +44,7 @@ const Movie = ({
       <h3 className="text-sm font-semibold mt-2 text-white">
         {title.length < 18 ? title : `${movieTitle}...`}
       </h3>
-      {<span className="text-primary">{customText}</span> || (
+      {<span className="text-primary">{customText}</span> && (
         <div className="flex justify-between mt-1">
           <span className="font-semibold text-[10px] text-white">
             {movieReleaseDate}

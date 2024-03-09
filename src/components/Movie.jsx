@@ -7,6 +7,7 @@ const Movie = ({
   release_date,
   id,
   setQuery,
+  className,
 }) => {
   const navigate = useNavigate();
 
@@ -22,7 +23,9 @@ const Movie = ({
 
   return (
     <div
-      className="w-32 sm:w-52 rounded-lg cursor-pointer transition flex-shrink-0"
+      className={`${
+        className || 'w-full'
+      }  rounded-lg cursor-pointer transition flex-shrink-0`}
       onClick={handleClick}
     >
       <img
@@ -40,7 +43,9 @@ const Movie = ({
         {title.length < 18 ? title : `${movieTitle}...`}
       </h3>
       <div className="flex justify-between mt-1">
-        <span className="font-semibold text-[10px]">{movieReleaseDate}</span>
+        <span className="font-semibold text-[10px] text-white">
+          {movieReleaseDate}
+        </span>
         <span className="block text-yellow-400 text-[10px]">
           <span className="bg-yellow-400 text-dark px-[2px] rounded-sm font-bold">
             IMDB

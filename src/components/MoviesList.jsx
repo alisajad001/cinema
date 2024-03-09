@@ -1,5 +1,6 @@
 import Movie from './Movie';
 import useFetch from '../hooks/useFetch';
+import Loader from './Loader';
 
 const MoviesList = ({ apiEndpoint, title, setQuery }) => {
   const apiURL = `https://api.themoviedb.org/3/${apiEndpoint}`;
@@ -10,14 +11,19 @@ const MoviesList = ({ apiEndpoint, title, setQuery }) => {
         {title} <span className="text-primary">Movies</span>
       </h2>
 
+      {/* Loading */}
+      {isLoading && <Loader />}
+      {isError && <p>Error: {error.message}</p>}
+
       <div className="flex gap-2 overflow-x-scroll py-5">
-        {isLoading && <p>Loading...</p>}
-
-        {isError && <p>Error: {error.message}</p>}
-
         {data &&
           data.results.map((movie) => (
-            <Movie key={movie.id} {...movie} setQuery={setQuery} />
+            <Movie
+              key={movie.id}
+              {...movie}
+              setQuery={setQuery}
+              className="w-32 sm:w-52"
+            />
           ))}
       </div>
     </section>

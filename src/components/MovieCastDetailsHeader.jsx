@@ -14,7 +14,7 @@ const MovieCastDetailsHeader = ({ personData, knownFor }) => {
         <img
           src={
             profile_path
-              ? `https://image.tmdb.org/t/p/w500/${profile_path}`
+              ? `https://image.tmdb.org/t/p/original/${profile_path}`
               : 'https://placehold.co/300x450/001/FFF?text=Image not found'
           }
           alt={name || 'Actor Profile'}

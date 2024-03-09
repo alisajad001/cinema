@@ -44,6 +44,7 @@ const MovieCastDetailsHeader = ({ personData, knownFor }) => {
                   poster_path={movie.poster_path}
                   release_date={movie.release_date}
                   vote_average={movie.vote_average}
+                  customText={`as ${movie.character || 'N/A'}`}
                 />
               );
             })}

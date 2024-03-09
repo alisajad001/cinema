@@ -16,6 +16,8 @@ const Movie = ({
   const handleClick = () => {
     navigate(`/movie/${id}`);
     query && setQuery('');
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const movieImage = `https://image.tmdb.org/t/p/w500/${poster_path}`;

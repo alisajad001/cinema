@@ -45,7 +45,7 @@ const Movie = ({
         />
       </div>
 
-      <h3 className="text-sm font-semibold mt-2 text-white">
+      <h3 className="text-sm font-bold mt-2 text-white">
         {title.length < 18 ? title : `${movieTitle}...`}
       </h3>
       {<span className="text-primary">{customText}</span> && (

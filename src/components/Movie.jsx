@@ -41,6 +41,7 @@ const Movie = ({
           }
           alt={title}
           title={title}
+          loading="lazy"
           className="rounded-md hover:saturate-150 hover:scale-110 transition object-cover w-full"
         />
       </div>

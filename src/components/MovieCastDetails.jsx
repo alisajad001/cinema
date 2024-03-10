@@ -2,11 +2,12 @@ import { useParams } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 import MovieCastDetailsHeader from './MovieCastDetailsHeader';
 import Loader from './Loader';
+import { getPersonById } from '../utils/apiUtils';
 
 const MovieCastDetails = () => {
   const { castId } = useParams();
 
-  const personAPI = `https://api.themoviedb.org/3/person/${castId}?`;
+  const personAPI = getPersonById(castId);
 
   const knownForAPI = `https://api.themoviedb.org/3/person/${castId}/movie_credits?`;
 

@@ -19,6 +19,7 @@ const MovieCastDetailsHeader = ({ personData, knownFor }) => {
           }
           alt={name || 'Actor Profile'}
           className="w-72 sm:w-80 object-cover rounded-md"
+          loading="lazy"
         />
 
         <div className="flex flex-col bg-dark rounded-md mt-5 w-72 sm:w-80 p-3">

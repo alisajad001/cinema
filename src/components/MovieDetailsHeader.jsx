@@ -32,7 +32,7 @@ const MovieDetailsHeader = ({ data }) => {
 
   return (
     <div
-      className="flex bg-no-repeat bg-cover bg-center justify-center items-center py-32"
+      className="flex bg-no-repeat bg-cover bg-center justify-center items-center py-40"
       style={{
         backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2) , rgba(0, 0, 0, 0)) , url(${backdropUrl})`,
       }}

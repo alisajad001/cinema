@@ -2,7 +2,7 @@ const Welcome = ({ query, setQuery }) => {
   return (
     <section className="h-72 mb-10 flex items-center bg-gradientPrimary">
       <div className="px-3 sm:container mx-auto w-full text-center">
-        <h1 className="text-3xl sm:text-5xl font-bold">
+        <h1 className="text-3xl sm:text-5xl font-black">
           CINEMA <span className="text-primary">MDB</span>
         </h1>
 

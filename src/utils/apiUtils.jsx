@@ -8,4 +8,7 @@ const getMovieById = (id) => `https://api.themoviedb.org/3/movie/${id}?`;
 const getMovieCasts = (id) =>
   `https://api.themoviedb.org/3/movie/${id}/credits?`;
 
-export { getMovieEndpoint, getMovieById, getMovieCasts };
+// Get Person by ID
+const getPersonById = (id) => `https://api.themoviedb.org/3/person/${id}?`;
+
+export { getMovieEndpoint, getMovieById, getMovieCasts, getPersonById };

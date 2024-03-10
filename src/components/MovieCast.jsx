@@ -23,6 +23,7 @@ const MovieCast = ({ cast }) => {
           }
           alt={cast.name || 'Actor Profile'}
           className="rounded-sm object-cover hover:scale-105 transition-all"
+          loading="lazy"
         />
       </div>
 

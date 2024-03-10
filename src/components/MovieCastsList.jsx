@@ -23,7 +23,7 @@ const MovieCastsList = ({ casts, castLoading, castError, data }) => {
         {casts ? (
           <>
             <h3 className="text-lg font-semibold mb-5">Cast</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 justify-items-center gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 justify-items-center gap-5">
               {casts.cast.slice(0, visibleCast).map((cast) => (
                 <MovieCast key={cast.id} cast={cast} />
               ))}

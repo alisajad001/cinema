@@ -21,7 +21,7 @@ const MovieCast = ({ cast }) => {
             : 'https://placehold.co/300x450/001/FFF?text=Image not found'
         }
         alt={cast.name || 'Actor Profile'}
-        className="w-36 rounded-md object-cover"
+        className="w-40 rounded-sm object-cover"
       />
       <h3 className="mt-2 font-semibold">{cast.name}</h3>
       <p className="text-primary text-sm">

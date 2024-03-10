@@ -11,4 +11,14 @@ const getMovieCasts = (id) =>
 // Get Person by ID
 const getPersonById = (id) => `https://api.themoviedb.org/3/person/${id}?`;
 
-export { getMovieEndpoint, getMovieById, getMovieCasts, getPersonById };
+// Get Person know for movies by ID
+const getKnowForByCastId = (id) =>
+  `https://api.themoviedb.org/3/person/${id}/movie_credits?`;
+
+export {
+  getMovieEndpoint,
+  getMovieById,
+  getMovieCasts,
+  getPersonById,
+  getKnowForByCastId,
+};

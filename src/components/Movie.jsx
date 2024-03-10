@@ -29,7 +29,7 @@ const Movie = ({
     <div
       className={`${
         className || 'w-full'
-      }  rounded-md cursor-pointer transition flex-shrink-0`}
+      }  rounded-md cursor-pointer transition flex-shrink-0 relative overflow-hidden`}
       onClick={handleClick}
     >
       <img
@@ -40,7 +40,7 @@ const Movie = ({
         }
         alt={title}
         title={title}
-        className="rounded-md hover:saturate-150 hover:-translate-y-2 transition object-cover w-full"
+        className="rounded-md hover:saturate-150 hover:scale-105 transition object-cover w-full"
       />
 
       <h3 className="text-sm font-semibold mt-2 text-white">

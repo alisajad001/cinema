@@ -12,14 +12,9 @@ const MovieDetailsSection = () => {
 
   const apiCasts = getMovieCasts(movieId);
 
-  const { data, isLoading, error, isError } = useFetch(apiURL);
+  const { data, isLoading } = useFetch(apiURL);
 
-  const {
-    data: casts,
-    isLoading: castLoading,
-    isError: castIsError,
-    error: castError,
-  } = useFetch(apiCasts);
+  const { data: casts } = useFetch(apiCasts);
 
   return (
     <section className="h-auto text-white">

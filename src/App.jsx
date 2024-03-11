@@ -11,6 +11,9 @@ import RenderMoviesList from './components/RenderMovieList';
 import MovieCastDetails from './components/MovieCast/MovieCastDetails';
 import Favorites from './sections/Favorites';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const queryClient = new QueryClient();
 
 const App = () => {
@@ -22,20 +25,30 @@ const App = () => {
     return storedFavorites ? JSON.parse(storedFavorites) : [];
   });
 
+  // Toast Message
+  const [toastMessage, setToastMessage] = useState('');
+
   // Toggle the favorite status
   const addToFavorites = (movie) => {
     setFavoriteMovies((movies) => {
-      // Check if the movie is already in favorites
       const isMovieInFavorites = movies.some(
         (favMovie) => favMovie.id === movie.id,
       );
 
       if (isMovieInFavorites) {
-        // If the movie is in the list remove
-        return movies.filter((favMovie) => favMovie.id !== movie.id);
+        // If the movie is already in favorites, remove it
+        const updatedMovies = movies.filter(
+          (favMovie) => favMovie.id !== movie.id,
+        );
+        setToastMessage('Removed from favorites');
+        toast.success('Removed from favorites');
+        return updatedMovies;
       } else {
-        // If the movie is not in the list add
-        return [...movies, movie];
+        // If the movie is not in favorites, add it
+        const updatedMovies = [...movies, movie];
+        setToastMessage('Added to favorites');
+        toast.success('Added to favorites');
+        return updatedMovies;
       }
     });
   };
@@ -58,6 +71,7 @@ const App = () => {
                 setQuery={setQuery}
                 addToFavorites={addToFavorites}
               />
+              <ToastContainer position="bottom-right" autoClose={3000} />
             </Home>
           }
         />

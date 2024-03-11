@@ -3,6 +3,7 @@ import useFetch from '../../hooks/useFetch';
 import MovieCastDetailsHeader from '../MovieCast/MovieCastDetailsHeader';
 import Loader from '../Loader';
 import { getKnowForByCastId, getPersonById } from '../../utils/apiUtils';
+import { ToastContainer } from 'react-toastify';
 
 const MovieCastDetails = ({ addToFavorites }) => {
   const { castId } = useParams();
@@ -16,6 +17,7 @@ const MovieCastDetails = ({ addToFavorites }) => {
 
   return (
     <div>
+      <ToastContainer position="bottom-right" autoClose={3000} />
       {/* Loading */}
       {isLoading && (
         <Loader className="h-screen flex items-center justify-center" />

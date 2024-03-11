@@ -4,7 +4,7 @@ import MovieCastDetailsHeader from '../MovieCast/MovieCastDetailsHeader';
 import Loader from '../Loader';
 import { getKnowForByCastId, getPersonById } from '../../utils/apiUtils';
 
-const MovieCastDetails = () => {
+const MovieCastDetails = ({ addToFavorites }) => {
   const { castId } = useParams();
 
   const personAPI = getPersonById(castId);
@@ -21,7 +21,13 @@ const MovieCastDetails = () => {
         <Loader className="h-screen flex items-center justify-center" />
       )}
 
-      {data && <MovieCastDetailsHeader personData={data} knownFor={knownFor} />}
+      {data && (
+        <MovieCastDetailsHeader
+          personData={data}
+          knownFor={knownFor}
+          addToFavorites={addToFavorites}
+        />
+      )}
     </div>
   );
 };

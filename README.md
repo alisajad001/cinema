@@ -19,6 +19,7 @@ Cinema app utilizes an API to fetch movie data and offers several features for a
 - ✅ React Router (For routing)
 - ✅ React Query (For fetching data)
 - ✅ Axios (For fetching data)
+- ✅ React Toastify dep for Toast messages
 
 ---
 

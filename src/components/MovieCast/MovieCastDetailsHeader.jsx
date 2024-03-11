@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Movie from '../MovieList/Movie';
 import Button from '../Button';
 
-const MovieCastDetailsHeader = ({ personData, knownFor }) => {
+const MovieCastDetailsHeader = ({ personData, knownFor, addToFavorites }) => {
   const [readMore, setReadMore] = useState(false);
   const [visibleMovies, setVisibleMovies] = useState(8);
 
@@ -77,6 +77,7 @@ const MovieCastDetailsHeader = ({ personData, knownFor }) => {
                   id={movie.id}
                   data={movie}
                   customText={`as ${movie.character || 'N/A'}`}
+                  addToFavorites={addToFavorites}
                 />
               );
             })}

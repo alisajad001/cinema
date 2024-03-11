@@ -5,10 +5,10 @@ import Home from './sections/Home';
 import { useEffect, useState } from 'react';
 import { QueryClientProvider, QueryClient } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import MovieDetailsSection from './components/MovieDetailsSection';
+import MovieDetailsSection from './components/MovieDetails/MovieDetailsSection';
 import NotFoundPage from './components/NotFoundPage';
 import RenderMoviesList from './components/RenderMovieList';
-import MovieCastDetails from './components/MovieCastDetails';
+import MovieCastDetails from './components/MovieCast/MovieCastDetails';
 import Favorites from './sections/Favorites';
 
 const queryClient = new QueryClient();

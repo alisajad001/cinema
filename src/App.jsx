@@ -22,9 +22,22 @@ const App = () => {
     return storedFavorites ? JSON.parse(storedFavorites) : [];
   });
 
-  // Add a movie to the favoritesMovies
+  // Toggle the favorite status
   const addToFavorites = (movie) => {
-    setFavoriteMovies((movies) => [...movies, movie]);
+    setFavoriteMovies((movies) => {
+      // Check if the movie is already in favorites
+      const isMovieInFavorites = movies.some(
+        (favMovie) => favMovie.id === movie.id,
+      );
+
+      if (isMovieInFavorites) {
+        // If the movie is in the list remove
+        return movies.filter((favMovie) => favMovie.id !== movie.id);
+      } else {
+        // If the movie is not in the list add
+        return [...movies, movie];
+      }
+    });
   };
 
   // Adds the movie when an add click is triggred
@@ -52,9 +65,17 @@ const App = () => {
         <Route path="movie/:movieId" element={<MovieDetailsSection />} />
         <Route
           path="favorites"
-          element={<Favorites favoriteMovies={favoriteMovies} />}
+          element={
+            <Favorites
+              favoriteMovies={favoriteMovies}
+              addToFavorites={addToFavorites}
+            />
+          }
         />
-        <Route path="cast/:castId" element={<MovieCastDetails />} />
+        <Route
+          path="cast/:castId"
+          element={<MovieCastDetails addToFavorites={addToFavorites} />}
+        />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />

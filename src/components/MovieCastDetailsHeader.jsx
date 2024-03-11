@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Movie from './Movie';
+import Button from './Button';
 
 const MovieCastDetailsHeader = ({ personData, knownFor }) => {
   const [readMore, setReadMore] = useState(false);
@@ -7,6 +8,9 @@ const MovieCastDetailsHeader = ({ personData, knownFor }) => {
 
   const { name, birthday, profile_path, place_of_birth, biography } =
     personData;
+
+  // Handle Load more movies
+  const handleLoadMore = () => setVisibleMovies((prev) => prev + 8);
 
   return (
     <div className="flex flex-col md:flex-row py-12 px-3 sm:px-10 gap-5 items-center md:items-start">
@@ -80,12 +84,7 @@ const MovieCastDetailsHeader = ({ personData, knownFor }) => {
               );
             })}
           {knownFor && knownFor.cast.length > visibleMovies && (
-            <button
-              className="bg-secondary rounded-md p-3"
-              onClick={() => setVisibleMovies((prev) => prev + 8)}
-            >
-              Load more
-            </button>
+            <Button onClick={handleLoadMore}>Load more</Button>
           )}
         </div>
       </div>

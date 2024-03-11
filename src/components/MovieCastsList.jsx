@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import MovieDetails from './MovieDetails';
 import MovieCast from './MovieCast';
+import Button from './Button';
 
 const MovieCastsList = ({ casts, castLoading, castError, data }) => {
   const [visibleCast, setVisibleCast] = useState(10);
@@ -28,12 +29,7 @@ const MovieCastsList = ({ casts, castLoading, castError, data }) => {
                 <MovieCast key={cast.id} cast={cast} />
               ))}
               {casts.cast.length > visibleCast && (
-                <button
-                  className="bg-secondary rounded-md p-3"
-                  onClick={handleLoadMore}
-                >
-                  Load more
-                </button>
+                <Button onClick={handleLoadMore}>Load more</Button>
               )}
             </div>
           </>

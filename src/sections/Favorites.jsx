@@ -1,5 +1,4 @@
-import Movie from '../components/Movie';
-import MoviesList from '../components/MoviesList';
+import Movie from '../components/MovieList/Movie';
 
 const Favorites = ({ favoriteMovies }) => {
   return (

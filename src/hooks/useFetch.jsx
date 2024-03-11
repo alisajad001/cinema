@@ -7,7 +7,9 @@ const useFetch = (endpoint) => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        `${endpoint}api_key=${import.meta.env.VITE_REACT_APP_TMDB_API_KEY}`,
+        `${endpoint}include_image_language=en&api_key=${
+          import.meta.env.VITE_REACT_APP_TMDB_API_KEY
+        }`,
         { cancelToken: cancelTokenSource.token },
       );
       return response.data;

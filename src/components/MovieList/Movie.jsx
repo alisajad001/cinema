@@ -32,7 +32,7 @@ const Movie = ({
     >
       <Button
         customClass="absolute top-1 left-1 z-20 w-6 h-6 sm:w-8 sm:h-8 flex justify-center items-center bg-black/50"
-        onClick={addToFavorites}
+        onClick={() => addToFavorites(data)}
       >
         <span className="text-md sm:text-xl">❤</span>
       </Button>

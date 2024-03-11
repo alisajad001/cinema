@@ -1,9 +1,11 @@
+import { ToastContainer } from 'react-toastify';
 import Movie from '../components/MovieList/Movie';
 
 const Favorites = ({ favoriteMovies, addToFavorites }) => {
   return (
     <section className="p-5">
       <h2 className="text-white text-2xl font-bold mb-7">Favorites</h2>
+      <ToastContainer position="bottom-right" autoClose={3000} />
       <div className="container mx-auto flex gap-6 flex-wrap justify-center">
         {favoriteMovies.length > 0 ? (
           favoriteMovies.map((movie) => {

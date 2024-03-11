@@ -32,7 +32,7 @@ const MoviesList = ({
               setQuery={setQuery}
               query={query}
               className="w-32 sm:w-52"
-              addToFavorites={() => addToFavorites(movie)}
+              addToFavorites={addToFavorites}
             />
           ))}
       </div>

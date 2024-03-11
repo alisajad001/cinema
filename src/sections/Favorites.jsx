@@ -1,12 +1,16 @@
 import Movie from '../components/Movie';
+import MoviesList from '../components/MoviesList';
 
-const Favorites = () => {
+const Favorites = ({ favoriteMovies }) => {
   return (
-    <section className="h-screen">
-      <div className="container mx-auto py-7">
-        <h2 className="text-lg m:text-2xl font-semibold text-white">
-          Favorites
-        </h2>
+    <section className="p-5">
+      <h2 className="text-white text-2xl font-bold mb-7">Favorites</h2>
+      <div className="container mx-auto flex gap-6 flex-wrap justify-center">
+        {favoriteMovies.map((movie) => {
+          return (
+            <Movie key={movie.id} data={movie} id={movie.id} className="w-52" />
+          );
+        })}
       </div>
     </section>
   );

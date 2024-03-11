@@ -1,5 +1,5 @@
 import { getMovieEndpoint } from '../utils/apiUtils';
-import MoviesList from './MoviesList';
+import MoviesList from './MovieList/MoviesList';
 
 const RenderMoviesList = ({ query, setQuery, addToFavorites }) => {
   const apiURL = getMovieEndpoint(query);

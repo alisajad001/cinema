@@ -21,7 +21,14 @@ Cinema app utilizes an API to fetch movie data and offers several features for a
 - ✅ Axios (For fetching data)
 - ✅ React Toastify dep for Toast messages
 
----
+## Screenshots
+![Screenshot (36)](https://github.com/alisajad001/cinema/assets/126584124/36e79ec6-b654-46d1-9cc0-ad2b3fd11aac)
+![Screenshot (37)](https://github.com/alisajad001/cinema/assets/126584124/2fe8dd71-c78d-455e-a2ab-b754a0877c3a)
+![Screenshot (38)](https://github.com/alisajad001/cinema/assets/126584124/c8735efd-915e-4d3c-af21-7451e5257eaf)
+![Screenshot (39)](https://github.com/alisajad001/cinema/assets/126584124/30e2eff2-f796-4c0a-b02b-d5d1e2c5bd5b)
+![Screenshot (40)](https://github.com/alisajad001/cinema/assets/126584124/e63cfd58-4df8-4e01-9b06-a7434b9acf2c)
+
+
 
 ### Deployment 🪐🌌🌍
 

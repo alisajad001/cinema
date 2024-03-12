@@ -76,9 +76,9 @@ const App = () => {
           }
         />
 
-        <Route path="movie/:movieId" element={<MovieDetailsSection />} />
+        <Route path="/movie/:movieId" element={<MovieDetailsSection />} />
         <Route
-          path="favorites"
+          path="/favorites"
           element={
             <Favorites
               favoriteMovies={favoriteMovies}
@@ -87,7 +87,7 @@ const App = () => {
           }
         />
         <Route
-          path="cast/:castId"
+          path="/cast/:castId"
           element={<MovieCastDetails addToFavorites={addToFavorites} />}
         />
         <Route path="*" element={<NotFoundPage />} />

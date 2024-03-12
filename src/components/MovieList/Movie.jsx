@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import Button from '../Button';
+import heart from '../../assets/heart-fill.svg';
 
 const Movie = ({
   data,
@@ -31,10 +32,10 @@ const Movie = ({
       className={`${className || 'w-full'} transition flex-shrink-0 relative`}
     >
       <Button
-        customClass="absolute top-1 left-1 z-20 w-6 h-6 sm:w-8 sm:h-8 flex justify-center items-center bg-black/50"
+        customClass="absolute top-1 left-1 z-20 w-6 h-6 sm:w-8 sm:h-8 flex justify-center items-center p-0 !bg-transparent"
         onClick={() => addToFavorites(data)}
       >
-        <span className="text-md sm:text-xl">❤</span>
+        <img src={heart} alt="Heart Icon" />
       </Button>
 
       <div

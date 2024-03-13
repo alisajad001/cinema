@@ -14,7 +14,8 @@ const MovieCastDetailsHeader = ({ personData, knownFor, addToFavorites }) => {
 
   return (
     <div className="flex flex-col md:flex-row py-12 px-3 sm:px-10 gap-5 items-center md:items-start">
-      <div className="w-full  sm:w-1/2 flex flex-col items-center sm:items-start sm:justify-start justify-center">
+      {/* Cast Details */}
+      <div className="w-full pt-24 sm:w-1/2 flex flex-col items-center sm:items-start sm:justify-start justify-center">
         <img
           src={
             profile_path
@@ -66,7 +67,8 @@ const MovieCastDetailsHeader = ({ personData, knownFor, addToFavorites }) => {
         </div>
       </div>
 
-      <div className="mt-20 sm:mt-0 w-full h-auto">
+      {/* Known For */}
+      <div className="mt-20 sm:mt-0 w-full h-auto pt-10">
         <h2 className="text-white text-2xl mb-5 font-semibold">Known for</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 justify-items-center gap-4">
           {knownFor &&

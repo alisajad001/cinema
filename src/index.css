@@ -14,5 +14,5 @@
 }
 
 body {
-  background-color: #041c31;
+  @apply bg-hero;
 }

@@ -15,6 +15,5 @@
 
 body {
   @apply bg-hero;
-  background-repeat: repeat-y;
-  background-size: contain;
+  background-size: cover;
 }

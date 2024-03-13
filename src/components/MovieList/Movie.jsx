@@ -32,7 +32,7 @@ const Movie = ({
       className={`${className || 'w-full'} transition flex-shrink-0 relative`}
     >
       <Button
-        customClass="absolute top-1 left-1 z-20 w-6 h-6 sm:w-8 sm:h-8 flex justify-center items-center !p-0 !bg-transparent"
+        customClass="absolute top-1 hover:!bg-red-600/40 left-1 z-20 w-7 h-7 sm:w-8 sm:h-8 flex justify-center items-center !p-0 !bg-transparent"
         onClick={() => addToFavorites(data)}
       >
         <img src={heart} alt="Heart Icon" />

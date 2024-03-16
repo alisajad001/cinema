@@ -36,4 +36,7 @@ Cinema app utilizes an API to fetch movie data and offers several features for a
 
 ---
 
+### Performance
+WILL BE UPDATED SOON...
+
 Designed and coded by [Ali Sajad Ahmadi](https://linkedin.com/in/alisajad001)
